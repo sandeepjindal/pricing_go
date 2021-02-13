@@ -16,12 +16,6 @@ type RPC struct {
 
 // GeneratePricing conforms to http.HandlerFunc and handles request logic
 // for the application method `GeneratePricing`.
-// NOTE: As you can see, this does a lot of stuff which should be part of a
-// standard request framework and is missing elemtents which you would see
-// in a production system (such as authentication, validation, errors-by-design,
-// etc.) Please feel free to implement certain features if you have time but do
-// not over-engineer this part; we're looking for a single functional endpoint,
-// not a framework!
 func (rpc *RPC) GeneratePricing(w http.ResponseWriter, r *http.Request) {
 	body, err := ioutil.ReadAll(r.Body)
 	if err != nil {
